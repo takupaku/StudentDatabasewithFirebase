@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Student Database with Firebase</string>
+
+    <string-array name="dept">
+
+        <item>CSE</item>
+        <item>EEE</item>
+        <item>MATHEMATICS</item>
+        <item>PHYSICS</item>
+        <item>CIVIL</item>
+
+    </string-array>
+</resources>
