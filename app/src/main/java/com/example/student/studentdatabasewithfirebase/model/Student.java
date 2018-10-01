@@ -1,4 +1,4 @@
-package com.example.student.studentdatabasewithfirebase;
+package com.example.student.studentdatabasewithfirebase.model;
 
 public class Student {
 

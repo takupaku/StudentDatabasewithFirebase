@@ -1,5 +1,6 @@
-package com.example.student.studentdatabasewithfirebase;
+package com.example.student.studentdatabasewithfirebase.activity;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +9,8 @@ import android.widget.TextView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.student.studentdatabasewithfirebase.R;
+import com.example.student.studentdatabasewithfirebase.model.Student;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
@@ -79,6 +82,12 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+    }
+
+    public void viewData(View view) {
+        Intent intent = new Intent(this,ListViewActivity.class);
+        startActivity(intent);
 
     }
 }
