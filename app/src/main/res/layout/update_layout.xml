@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f1413c35">
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/updateId"
+        android:textSize="25dp"
+        android:hint="Id"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/update_name"
+        android:textSize="25dp"
+        android:hint="Name"/>
+
+  <Spinner
+      android:layout_width="match_parent"
+      android:layout_marginTop="20dp"
+      android:layout_height="40dp"
+      android:id="@+id/update_dept"
+      android:layout_marginBottom="2dp"
+      android:entries="@array/dept">
+
+  </Spinner>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="#686161"
+        android:text="update"
+        android:id="@+id/updateButton"
+        android:textSize="25dp"/>
+
+
+</LinearLayout>
