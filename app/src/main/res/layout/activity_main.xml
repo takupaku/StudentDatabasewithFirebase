@@ -49,14 +49,26 @@
             android:onClick="savaData"
             android:text="save" />
 
-
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:onClick="searchBtn"
+            android:text="search by id"
+            />
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="5dp">
-
-
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/searchResultId"
+                android:textAlignment="center"
+                android:textColor="#000"
+                android:textSize="20dp"
+                android:layout_height="wrap_content" />
         </ScrollView>
+
+
 
     </LinearLayout>
 
@@ -70,7 +82,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-android:onClick="viewData"
+            android:onClick="viewData"
             android:text="view data" />
     </LinearLayout>
 

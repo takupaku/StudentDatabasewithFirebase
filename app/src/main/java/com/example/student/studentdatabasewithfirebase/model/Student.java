@@ -2,7 +2,7 @@ package com.example.student.studentdatabasewithfirebase.model;
 
 public class Student {
 
-    String id,name, dept, user_id;
+    String id, name, dept, user_id;
 
     public Student() {
     }

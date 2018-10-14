@@ -32,7 +32,7 @@ public class ListViewActivity extends AppCompatActivity {
 
     private ListView listView;
     private DatabaseReference reference;
-    private List<Student>  studentList = new ArrayList<>();
+    private List<Student> studentList = new ArrayList<>();
 
 
     @Override
@@ -52,15 +52,15 @@ public class ListViewActivity extends AppCompatActivity {
 
                 studentList.clear();
                 Iterable<DataSnapshot> allStudents = dataSnapshot.getChildren();
-                for(DataSnapshot student : allStudents){
-                   Student std1 = student.getValue(Student.class);
-                   studentList.add(std1);
+                for (DataSnapshot student : allStudents) {
+                    Student std1 = student.getValue(Student.class);
+                    studentList.add(std1);
                 }
 
 
                 //Toast.makeText(ListViewActivity.this, ""+studentList.get(0).getName(), Toast.LENGTH_SHORT).show();
 
-                StudentAdapter adapter = new StudentAdapter(ListViewActivity.this,studentList);
+                StudentAdapter adapter = new StudentAdapter(ListViewActivity.this, studentList);
                 listView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
             }
@@ -69,7 +69,7 @@ public class ListViewActivity extends AppCompatActivity {
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
-                Log.e("read_error",databaseError.getMessage());//read_error is the given name of the error that the logCat will show
+                Log.e("read_error", databaseError.getMessage());//read_error is the given name of the error that the logCat will show
             }
         });
     }
@@ -111,7 +111,7 @@ public class ListViewActivity extends AppCompatActivity {
                 //this will edit
             }
         });
-        builder.setNeutralButton("cancel",null);
+        builder.setNeutralButton("cancel", null);
         builder.show();
     }
 
@@ -122,8 +122,8 @@ public class ListViewActivity extends AppCompatActivity {
         String dept = studentList.get(pos).getDept();
         final String user_node = studentList.get(pos).getUser_id();
 
-        AlertDialog.Builder builder= new AlertDialog.Builder(this);
-        View view = getLayoutInflater().inflate(R.layout.update_layout,null);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        View view = getLayoutInflater().inflate(R.layout.update_layout, null);
 
         final EditText etId = view.findViewById(R.id.updateId);
         final EditText etName = view.findViewById(R.id.update_name);
@@ -133,8 +133,8 @@ public class ListViewActivity extends AppCompatActivity {
         etId.setText(id);
         etName.setText(name);
         String[] deptList = getResources().getStringArray(R.array.dept);
-        for(int i = 0; i<deptList.length; i++){
-            if(deptList[i].equals(dept)){
+        for (int i = 0; i < deptList.length; i++) {
+            if (deptList[i].equals(dept)) {
                 spDept.setSelection(i);
             }
         }
@@ -151,13 +151,12 @@ public class ListViewActivity extends AppCompatActivity {
                 String newDept = spDept.getSelectedItem().toString();
                 reference.child(user_node).setValue(new Student());
 
-                reference.child(user_node).setValue(new Student(newId,newName,newDept,user_node)).addOnCompleteListener(new OnCompleteListener<Void>() {
+                reference.child(user_node).setValue(new Student(newId, newName, newDept, user_node)).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        if(task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             Toast.makeText(ListViewActivity.this, "Updated", Toast.LENGTH_SHORT).show();
-                        }
-                        else {
+                        } else {
                             Toast.makeText(ListViewActivity.this, "not Updated", Toast.LENGTH_SHORT).show();
                         }
                         dialog.dismiss();

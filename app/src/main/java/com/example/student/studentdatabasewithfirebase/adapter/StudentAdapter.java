@@ -41,15 +41,15 @@ public class StudentAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
 
-        if(view == null){
+        if (view == null) {
             LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view =  layoutInflater.inflate(R.layout.student_layout,null);
+            view = layoutInflater.inflate(R.layout.student_layout, null);
 
         }
 
-        TextView name =view.findViewById(R.id._stdName);
-        TextView id =view.findViewById(R.id._stdId);
-        TextView dept =view.findViewById(R.id._stdDept);
+        TextView name = view.findViewById(R.id._stdName);
+        TextView id = view.findViewById(R.id._stdId);
+        TextView dept = view.findViewById(R.id._stdDept);
 
         name.setText(students.get(i).getName());
         id.setText(students.get(i).getId());
